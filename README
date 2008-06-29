@@ -2,8 +2,14 @@ feldtlib - Robert Feldt's Library of common code
 ------------------------------------------------
 Author: Robert Feldt
 
-Has code for both Ruby and Clojure.
+Has code for severl programming languages.
 
 Clojure:
 
 * file_watch.clj - watching files and dirs for updates
+
+Ruby:
+
+Haskell:
+
+C:
