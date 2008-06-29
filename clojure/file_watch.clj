@@ -29,7 +29,7 @@
   [m2 m1]
   (filter (fn [k] (not= (k m1) (k m2))) (concat (keys m1) (keys m2))))
 
-(defn files-modified-since
+(defn modified-files
   "Returns a seq of files (recursively) below dir that have been 
    modified compared to modifiedmap"
   [dir modifiedmap]
