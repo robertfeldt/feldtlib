@@ -1,3 +1,9 @@
+;; Watching files and dirs for updates
+;;
+;; Part of feldtlib
+;; Copyright (c) 2008 Robert Feldt
+;; robert.feldt@gmail.com
+;;
 (in-ns 'feldt-lib)
 (clojure/refer 'clojure)
 
