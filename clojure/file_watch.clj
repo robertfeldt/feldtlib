@@ -1,8 +1,11 @@
+(in-ns 'feldt-lib)
+(clojure/refer 'clojure)
+
 (import '(java.io File))
 
 (defn files-below
-  "Returns a lazy seq of the files (excl. dirs) below
-   (recursively) file"
+  "Returns a lazy seq of the files (recursively but excl. dirs) 
+   below file"
   [file]
   (let [subfiles  (.listFiles file)
         onlyfiles (filter (fn [f] (.isFile f)) subfiles)
@@ -16,9 +19,9 @@
           {} (files-below file)))
 
 (defn keys-with-different-values
-  "Returns a seq of files that have different values in the maps m1 and m2"
-  [m1 m2]
-  (filter (fn [k] (not= (k m1) (k m2))) (keys m1)))
+  "Returns a seq of keys that have different values in the maps m1 and m2"
+  [m2 m1]
+  (filter (fn [k] (not= (k m1) (k m2))) (concat (keys m1) (keys m2))))
 
 (defn files-modified-since
   "Returns a seq of files (recursively) below dir that have been 
