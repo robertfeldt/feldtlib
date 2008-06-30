@@ -25,9 +25,9 @@
           {} (files-below file)))
 
 (defn keys-with-different-values
-  "Returns a seq of keys that have different values in the maps m1 and m2"
+  "Returns a set of keys that have different values in the maps m1 and m2"
   [m2 m1]
-  (filter (fn [k] (not= (k m1) (k m2))) (concat (keys m1) (keys m2))))
+  (set (filter (fn [k] (not= (k m1) (k m2))) (concat (keys m1) (keys m2)))))
 
 (defn modified-files
   "Returns a seq of files (recursively) below dir that have been 
